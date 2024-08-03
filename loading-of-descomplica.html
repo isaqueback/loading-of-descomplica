@@ -22,26 +22,26 @@
             .polygon-container {
                 position: relative;
                 overflow: hidden;
-                width: 58px;
-                height: 60px;
+                width: 174px;
+                height: 180px;
 
                 .polygon__wrapper {
                     position: absolute;
                     top: 0;
                     left: 0;
-                    width: 58px;
-                    height: 60px;
+                    width: 174px;
+                    height: 180px;
                     filter: url('#polygon__filter');
                     overflow: hidden;
 
                     .polygon {
-                        width: 45px;
-                        height: 40px;
+                        width: 135px;
+                        height: 120px;
                         overflow: visible;
                         animation: smoothRotating 7s ease-in-out infinite;
                         position: absolute;
-                        top: calc(50% - 20px);
-                        left: calc(50% - 22.5px);
+                        top: calc(50% - 60px);
+                        left: calc(50% - 67.5px);
                         clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
                         margin: 0 auto;
 
@@ -118,7 +118,7 @@
         <svg class="polygon__rounded" xmlns="http://www.w3.org/2000/svg">
             <defs>
                 <filter id="polygon__filter">
-                    <feGaussianBlur stdDeviation="2" />
+                    <feGaussianBlur stdDeviation="6.75" />
                     <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" />
                 </filter>
             </defs>
