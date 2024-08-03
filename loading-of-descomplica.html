@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Descomplica's Loading</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            width: 100vw;
+            height: 100dvh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .polygon-container {
+                position: relative;
+                overflow: hidden;
+                width: 58px;
+                height: 60px;
+
+                .polygon__wrapper {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 58px;
+                    height: 60px;
+                    filter: url('#polygon__filter');
+                    overflow: hidden;
+
+                    .polygon {
+                        width: 45px;
+                        height: 40px;
+                        overflow: visible;
+                        animation: smoothRotating 7s ease-in-out infinite;
+                        position: absolute;
+                        top: calc(50% - 20px);
+                        left: calc(50% - 22.5px);
+                        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 85%);
+                        margin: 0 auto;
+
+                        &.polygon-1 {
+                            background-color: #00E28A;
+                        }
+
+                        &.polygon-2 {
+                            background-color: #9675E3;
+                            animation-delay: 25ms;
+                        }
+
+                        &.polygon-3 {
+                            background-color: #FAD35A;
+                            animation-delay: 50ms;
+                        }
+
+                        &.polygon-4 {
+                            background-color: #E87F25;
+                            animation-delay: 75ms;
+                        }
+
+                        &.polygon-5 {
+                            background-color: #4E9EE7;
+                            animation-delay: 90ms;
+                        }
+
+                        &.polygon-6 {
+                            background-color: #E56861;
+                            animation-delay: 105ms;
+                        }
+                    }
+                }
+            }
+        }
+
+        @keyframes smoothRotating {
+
+            0%,
+            15%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50%,
+            65% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="polygon-container">
+        <div class="polygon__wrapper">
+            <div class="polygon polygon-6"></div>
+        </div>
+        <div class="polygon__wrapper">
+            <div class="polygon polygon-5"></div>
+        </div>
+        <div class="polygon__wrapper">
+            <div class="polygon polygon-4"></div>
+        </div>
+        <div class="polygon__wrapper">
+            <div class="polygon polygon-3"></div>
+        </div>
+        <div class="polygon__wrapper">
+            <div class="polygon polygon-2"></div>
+        </div>
+        <div class="polygon__wrapper">
+            <div class="polygon polygon-1"></div>
+        </div>
+
+        <svg class="polygon__rounded" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+                <filter id="polygon__filter">
+                    <feGaussianBlur stdDeviation="2" />
+                    <feColorMatrix values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" />
+                </filter>
+            </defs>
+        </svg>
+    </div>
+</body>
+
+</html>
